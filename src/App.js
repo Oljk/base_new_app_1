@@ -8,6 +8,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Changed to hello world. </p>
+
+          <div>Oljko talks</div>
       </header>
     </div>
   );
