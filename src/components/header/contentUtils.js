@@ -1,5 +1,5 @@
 function Logo(props) {
-    return (<img img={props.logoUrl}/>);
+    return (<img img={props.logoUrl} className="App-logo" alt={"logo"}/>);
 }
 function AddArticle(props) {
     return (
@@ -13,3 +13,5 @@ function AddArticle(props) {
 function ButtonAddArticle(props) {
     return <button name={props.bName} type="submit">+</button>
 }
+
+export {Logo, AddArticle};
