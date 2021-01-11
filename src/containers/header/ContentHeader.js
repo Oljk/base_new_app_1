@@ -10,6 +10,8 @@ function ContentHeader(props) {
  //   const name = {};
  //   const surname = {};
    // const  logoUrl = {};
+
+
     const bName = 'add';
     /*
     const onFormSubmit = (formData) => {
@@ -18,9 +20,12 @@ function ContentHeader(props) {
     }; */
 
 
+    const test =  () => {
+        alert('test');
+    }
     return (<div>
             <Logo logoUrl={props.logoUrl}/>
-            <AddArticle bName={bName}/>
+            <AddArticle bName={bName} onclick={() => test()}/>
             <MiniUser profileUrl={props.profileUrl} name={props.name} surname={props.surname} image={props.image} />
 
         </div>

@@ -1,4 +1,4 @@
-import Article from '../../components/content/article.js'
+import {Article} from '../../components/content/article.jsx'
 import * as React from "react";
 
 class ContentGeneral extends React.Component {
