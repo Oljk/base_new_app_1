@@ -1,7 +1,8 @@
 import {MiniUser} from '../../components/header/user'
 import * as React from "react";
-import {Logo} from '../../components/header/contentUtils'
+import {Articles, Logo} from '../../components/header/contentUtils'
 import {AddArticle} from '../../components/header/contentUtils'
+import views from "../../views";
 //переделать в класс ???
 
 function ContentHeader(props) {
@@ -20,13 +21,11 @@ function ContentHeader(props) {
     }; */
 
 
-    const test =  () => {
-        alert('test');
-    }
     return (<div>
             <Logo logoUrl={props.logoUrl}/>
-            <AddArticle bName={bName} onclick={() => test()}/>
-            <MiniUser profileUrl={props.profileUrl} name={props.name} surname={props.surname} image={props.image} />
+            {props.curPage === views.articles &&  <AddArticle bName={bName} onclick={props.changePage}/>}
+            {(props.curPage === views.viewProfile || props.curPage === views.addArticle) &&  <Articles bName="articles" onclick={props.changePage} />}
+            <MiniUser profileUrl={props.profileUrl} name={props.name} surname={props.surname} image={props.image} onclick={props.changePage} />
 
         </div>
     );

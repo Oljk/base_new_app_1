@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import views from "../../views";
+import React from "react";
 
 function Logo(props) {
     return (<img img={props.logoUrl} className="App-logo" alt={"logo"}/>);
@@ -6,14 +8,14 @@ function Logo(props) {
 function AddArticle(props) {
     return (
       <div>
-          <ButtonAddArticle name={props.bName} onclick={() => props.onclick()} />
-          Add Article
+          <ButtonAddArticle name={props.bName} onclick={props.onclick} page={views.addArticle}/>
+
       </div>
     );
 }
 
 function ButtonAddArticle(props) {
-    return  <button name={props.bName} type="submit" onClick={props.onclick}>+</button>
+    return  <button name={props.bName} type="submit" onClick={() => {props.onclick(props.page)}}>ADD ARTICLE</button>
 }
 
 ButtonAddArticle.propTypes = {
@@ -21,7 +23,10 @@ ButtonAddArticle.propTypes = {
 };
 
 
+function Articles(props) {
+    return  <button name={props.bName} type="submit" onClick={() => {props.onclick(views.articles)}}>ARTICLES</button>
+}
 
 
 
-export {Logo, AddArticle};
+export {Logo, AddArticle,Articles};
