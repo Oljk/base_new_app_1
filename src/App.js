@@ -6,9 +6,6 @@ import React from "react";
 import views from "./views";
 
 function App() {
-    const [page, setPage] = React.useState(views.articles);
-
-    const logoUrl = './src/logo.svg';
 
     const exampleUser = {
         profileUrl: '/user/1',
@@ -16,15 +13,29 @@ function App() {
         surname : 'Ivanov'
     };
 
+    const [page, setPage] = React.useState(views.articles);
+    const [curUser, setCurUser] = React.useState(exampleUser);
+
+    const logoUrl = './src/logo.svg';
+
+
+    function editUser(event) {
+        setCurUser({
+            name : event.target[0].value,
+            surname : event.target[1].value
+        });
+        event.preventDefault();
+    }
+
   return (
     <div className="App">
       <header className="App-header">
           <ContentHeader image={logoUrl} profileUrl={exampleUser.profileUrl} name={exampleUser.name}
-                         surname={exampleUser.surname} logoUrl={logoUrl} changePage={setPage} curPage={page}/>
+                         surname={exampleUser.surname} logoUrl={logoUrl} changePage={setPage} curPage={page} curUser={curUser}/>
           <div>Oljko talks</div>
           <div> {page} </div>
       </header>
-        <ContentGeneral page={page}/>
+        <ContentGeneral page={page} curUser={curUser} editUser={editUser}/>
     </div>
   );
 }

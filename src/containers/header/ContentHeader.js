@@ -25,7 +25,7 @@ function ContentHeader(props) {
             <Logo logoUrl={props.logoUrl}/>
             {props.curPage === views.articles &&  <AddArticle bName={bName} onclick={props.changePage}/>}
             {(props.curPage === views.viewProfile || props.curPage === views.addArticle) &&  <Articles bName="articles" onclick={props.changePage} />}
-            <MiniUser profileUrl={props.profileUrl} name={props.name} surname={props.surname} image={props.image} onclick={props.changePage} />
+            <MiniUser profileUrl={props.profileUrl} name={props.curUser.name} surname={props.curUser.surname} image={props.image} onclick={props.changePage}  />
 
         </div>
     );

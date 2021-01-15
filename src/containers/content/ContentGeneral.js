@@ -1,13 +1,15 @@
 import {Article} from '../../components/content/article.jsx'
 import * as React from "react";
 import views from "../../views";
+import {Profile} from "../../components/header/user";
 
 class ContentGeneral extends React.Component {
 
+/* грит юзлес конструктор
     constructor(props) {
         super(props);
         // Не вызывайте здесь this.setState()!
-    }
+    }*/
 
     articles = [
         {
@@ -27,8 +29,8 @@ class ContentGeneral extends React.Component {
                         return (<Article articleName={article.articleName} articleText={article.articleText} key={i}/>);
                     })
                 }
-                {this.props.page == views.viewProfile && "ТУТ МЫ ВИДИМ ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ УРА"}
-                {this.props.page == views.addArticle && "ВОЗМОЖНО ТУТ ВИСИТ ПОПАП ЧТО МЫ ДОБАВЛЯЕМ СТАТЬЮ"}
+                {this.props.page === views.viewProfile && <Profile curUser={this.props.curUser} editUser={this.props.editUser}/>}
+                {this.props.page === views.addArticle && "ВОЗМОЖНО ТУТ ВИСИТ ПОПАП ЧТО МЫ ДОБАВЛЯЕМ СТАТЬЮ"}
 
 
             </div>

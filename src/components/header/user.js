@@ -16,15 +16,21 @@ function HeaderAvatar(props) {
     );
 }
 
+
 function Profile(props) {
     return(
         <div>
-            <input type="text" placeholder="input name" name="name"/>
-            <input type="text" placeholder="input surname" name="surname"/>
-            <button type="submit" onClick={() => {console.log('kek')}}> submit </button>
+            Hello, {props.curUser.name} {props.curUser.surname}
+            <form onSubmit={props.editUser} >
+                <p>  <input type="text" placeholder="input name" name="name"/></p>
+                <p>
+                <input type="text" placeholder="input surname" name="surname"/> </p>
+                <p>
+                <button type="submit" name="submit"> submit </button></p>
+            </form>
         </div>
     );
 }
 
 
-export  {MiniUser, HeaderAvatar};
+export  {MiniUser, HeaderAvatar, Profile};
