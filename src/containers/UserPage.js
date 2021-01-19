@@ -1,7 +1,8 @@
 import ContentHeader from "./header/ContentHeader";
 import ContentGeneral from "./content/ContentGeneral";
 import React, {useState} from "react";
-import views from "./views";
+import views from "../views";
+
 
 
 function UserPage(props) {
