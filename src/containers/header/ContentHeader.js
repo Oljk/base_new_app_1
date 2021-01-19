@@ -1,8 +1,9 @@
 import {MiniUser} from '../../components/header/user'
 import * as React from "react";
-import {Articles, Logo} from '../../components/header/contentUtils'
-import {AddArticle} from '../../components/header/contentUtils'
 import views from "../../views";
+import {Articles} from "../../components/header/articles";
+import {AddArticle} from "../../components/header/addArticleComp";
+import {Logo} from "../../components/header/Logo";
 //переделать в класс ???
 
 function ContentHeader(props) {
